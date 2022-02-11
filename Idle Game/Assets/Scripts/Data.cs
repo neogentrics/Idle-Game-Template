@@ -17,8 +17,8 @@ public class Data
     {
         flasks = 0;
 
-        clickUpgradesLevel = new int[4].ToList();
-        productionUpgradesLevel = new int[4].ToList();
+        clickUpgradesLevel = new int[7].ToList();
+        productionUpgradesLevel = new int[7].ToList();
     }
 
 }

@@ -38,23 +38,29 @@ public class UpgradesManager : MonoBehaviour
     {
         Methods.UpgradeCheck(Controller.Instance.data.clickUpgradesLevel, length: 4);
 
-        clickUpgradesName = new[] { "Click Power +1", "Click Power +5", "Click Power +10", "Click Power +25"};
+        clickUpgradesName = new[] 
+        { 
+            "Click Power +1", "Click Power +5", "Click Power +10", "Click Power +25", "Click Power +50", "Click Power +100", "Click Power +1000" 
+        };
 
         productionUpgradesName = new[]
         {
-            "+1 Flask/s",
             "+2 Flask/s",
+            "+5 Flask/s",
             "+10 Flask/s",
             "+100 Flask/s",
+            "+200 Flask/s",
+            "+400 Flask/s",
+            "+800 Flask/s"
         };
 
-        clickUpgradesBaseCost = new BigDouble[] {10, 50, 100, 1000};
-        clickUpgradesCostMulti = new BigDouble[] {1.25, 1.35, 1.55, 2};
-        clickUpgradesBasePower = new BigDouble[] {1, 5, 10, 25};
+        clickUpgradesBaseCost = new BigDouble[] {10, 50, 100, 1000, 2000, 2500, 3000};
+        clickUpgradesCostMulti = new BigDouble[] {1.25, 1.35, 1.55, 2, 2.5, 3, 3.5};
+        clickUpgradesBasePower = new BigDouble[] {1, 5, 10, 25, 50, 100, 1000};
 
-        productionUpgradesBaseCost = new BigDouble[] {25, 100, 1000, 10000};
-        productionUpgradesCostMulti = new BigDouble[] {1.5, 1.75, 2, 3};
-        productionUpgradesBasePower = new BigDouble[] {1, 2, 10, 100};
+        productionUpgradesBaseCost = new BigDouble[] {25, 100, 1000, 2000, 4000, 8000, 10000};
+        productionUpgradesCostMulti = new BigDouble[] {1.5, 1.75, 2, 2.5, 2.75, 3, 3.5};
+        productionUpgradesBasePower = new BigDouble[] {2, 5, 10, 100, 200, 400, 800};
 
         for (int i = 0; i < Controller.Instance.data.clickUpgradesLevel.Count; i++)
         {
