@@ -33,3 +33,25 @@ However the issue still remains with the UI Scrollbar not functioning as intende
 Will continue to debug and add more features.
 
 ***********************************************************************************************************************************************************************************
+
+**Update 4**
+
+Implemented some bug fixes for minor issues in Unity and the scripts. 
+
+All scripts were updated to the latest C# v10 on .Net 6.0 in Visual Studio 2022
+
+-> Added
+
+Save States and Load States for PlayerData After Implementation the game failed to relaunch after the initial attempt. 
+
+-> Bug Found 
+
+Visual Studio 2022 sees no issues in the code. However I am receiving an error in Unity Ver. 2020.3.28f1
+
+Is this issue due to great a difference in software compatibility or is there a random line of code nor setup properly.
+
+***********************************************************************************************************************************************************************************
+
+**Update 5**
+
+_Coming Soon..._
