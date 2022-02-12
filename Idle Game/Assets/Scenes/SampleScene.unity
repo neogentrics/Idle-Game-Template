@@ -2238,6 +2238,70 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c2c41621aacc5040ad3b8de029a905c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  data:
+    flasks:
+      mantissa: 0
+      exponent: 0
+    clickUpgradesLevel:
+    - mantissa: 0
+      exponent: 0
+    - mantissa: 0
+      exponent: 0
+    - mantissa: 0
+      exponent: 0
+    - mantissa: 0
+      exponent: 0
+    - mantissa: 0
+      exponent: 0
+    - mantissa: 0
+      exponent: 0
+    - mantissa: 0
+      exponent: 0
+    productionUpgradesLevel:
+    - mantissa: 0
+      exponent: 0
+    - mantissa: 0
+      exponent: 0
+    - mantissa: 0
+      exponent: 0
+    - mantissa: 0
+      exponent: 0
+    - mantissa: 0
+      exponent: 0
+    - mantissa: 0
+      exponent: 0
+    - mantissa: 0
+      exponent: 0
+    productionUpgradeGenerated:
+    - mantissa: 0
+      exponent: 0
+    - mantissa: 0
+      exponent: 0
+    - mantissa: 0
+      exponent: 0
+    - mantissa: 0
+      exponent: 0
+    - mantissa: 0
+      exponent: 0
+    - mantissa: 0
+      exponent: 0
+    - mantissa: 0
+      exponent: 0
+    generatorUpgradesLevel:
+    - mantissa: 0
+      exponent: 0
+    - mantissa: 0
+      exponent: 0
+    - mantissa: 0
+      exponent: 0
+    - mantissa: 0
+      exponent: 0
+    - mantissa: 0
+      exponent: 0
+    - mantissa: 0
+      exponent: 0
+    - mantissa: 0
+      exponent: 0
   flasksTexts: {fileID: 1458751207}
   flasksPerSecond: {fileID: 1770123845}
   flaskClickPowerText: {fileID: 1898467473}
@@ -3273,7 +3337,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1234097955}
   m_HandleRect: {fileID: 1234097954}
   m_Direction: 3
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:

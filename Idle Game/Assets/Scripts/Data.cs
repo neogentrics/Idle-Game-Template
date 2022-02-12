@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using BreakInfinity;
 
-
+[Serializable]
 public class Data 
 {
     public BigDouble flasks;

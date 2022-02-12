@@ -43,13 +43,16 @@ public class Controller : MonoBehaviour
         return UpgradesManager.Instance.UpgradeHandlers[2].UpgradesBasePower[index] * data.generatorUpgradesLevel[index];
     }
 
-    public void Start()
+    private const string dataFileName = "PlayerData";
+    private void Start()
     {
-        data = new Data();
-
+        data = SaveSystem.SaveExists(dataFileName) 
+            ? SaveSystem.LoadData<Data>(dataFileName)
+            : new Data();
         UpgradesManager.Instance.StartUpgradeManager();
     }
 
+    private float SaveTime;
 
     public void Update()
     {
@@ -61,6 +64,13 @@ public class Controller : MonoBehaviour
 
         for (var i = 0; i < data.productionUpgradesLevel.Count; i++)
             data.productionUpgradeGenerated[i] += UpgradesPerSecond(i) * Time.deltaTime;
+
+        SaveTime += Time.deltaTime * (1 / Time.timeScale);
+        if (SaveTime >= 15)
+        {
+            SaveSystem.SaveData(data, dataFileName);
+            SaveTime = 0;
+        }    
     }
 
 
