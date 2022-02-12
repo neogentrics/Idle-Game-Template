@@ -5,27 +5,27 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637800419792395683
-    m_Hash: 4076532626
+      ticks: 637802083869636281
+    m_Hash: 2550432872
   m_LockFileStatus:
     m_FilePath: C:/Users/fight/Idle Game/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637800419792455790
-    m_Hash: 957832006
+      ticks: 637802083977955364
+    m_Hash: 1992786134
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_PackageAssets:
   m_Packages:
     m_ResolvedPackages:
-    - packageId: com.unity.2d.animation@5.0.10
+    - packageId: com.unity.2d.animation@5.1.0
       testable: 0
       isDirectDependency: 1
-      version: 5.0.10
+      version: 5.1.0
       source: 1
-      resolvedPath: C:\Users\fight\Idle Game\Library\PackageCache\com.unity.2d.animation@5.0.10
+      resolvedPath: C:\Users\fight\Idle Game\Library\PackageCache\com.unity.2d.animation@5.1.0
       assetPath: Packages/com.unity.2d.animation
       name: com.unity.2d.animation
       displayName: 2D Animation
@@ -121,13 +121,13 @@ m_PackageAssets:
         - 7.0.3
         - 8.0.0-pre.3
         - 8.0.0-pre.4
+        - 8.0.0
         compatible:
-        - 5.0.10
         - 5.1.0
-        verified: 5.0.10
+        verified: 5.1.0
       dependencies:
       - name: com.unity.2d.common
-        version: 4.0.4
+        version: 4.1.0
       - name: com.unity.mathematics
         version: 1.1.0
       - name: com.unity.2d.sprite
@@ -138,7 +138,7 @@ m_PackageAssets:
         version: 1.0.0
       resolvedDependencies:
       - name: com.unity.2d.common
-        version: 4.0.4
+        version: 4.1.0
       - name: com.unity.2d.sprite
         version: 1.0.0
       - name: com.unity.modules.uielements
@@ -170,13 +170,13 @@ m_PackageAssets:
       entitlements:
         isAllowed: 1
       isAssetStorePackage: 0
-      datePublishedTicks: 637750142350000000
+      datePublishedTicks: 637781310880000000
       documentationUrl: 
       hasRepository: 1
       repository:
         type: git
         url: https://github.cds.internal.unity3d.com/unity/2d.git
-        revision: 341b7316671d7e6703a7627f67c5fab262c4f1ac
+        revision: e1ff2896b994f5eb1cc6bec519c643b3e2cd32ec
         path: 
     - packageId: com.unity.2d.pixel-perfect@4.0.1
       testable: 0
@@ -253,12 +253,12 @@ m_PackageAssets:
         url: https://github.cds.internal.unity3d.com/unity/2d.git
         revision: 7d7470f4ca0ea8353d4c9640b3b6ae9d1ebd9c1d
         path: 
-    - packageId: com.unity.2d.psdimporter@4.1.3
+    - packageId: com.unity.2d.psdimporter@4.2.0
       testable: 0
       isDirectDependency: 1
-      version: 4.1.3
+      version: 4.2.0
       source: 1
-      resolvedPath: C:\Users\fight\Idle Game\Library\PackageCache\com.unity.2d.psdimporter@4.1.3
+      resolvedPath: C:\Users\fight\Idle Game\Library\PackageCache\com.unity.2d.psdimporter@4.2.0
       assetPath: Packages/com.unity.2d.psdimporter
       name: com.unity.2d.psdimporter
       displayName: 2D PSD Importer
@@ -327,20 +327,20 @@ m_PackageAssets:
         - 6.0.2
         - 7.0.0-pre.3
         - 7.0.0-pre.4
+        - 7.0.0
         compatible:
-        - 4.1.3
         - 4.2.0
-        verified: 4.1.3
+        verified: 4.2.0
       dependencies:
       - name: com.unity.2d.common
-        version: 4.0.4
+        version: 4.1.0
       - name: com.unity.2d.animation
-        version: 5.0.10
+        version: 5.1.0
       - name: com.unity.2d.sprite
         version: 1.0.0
       resolvedDependencies:
       - name: com.unity.2d.common
-        version: 4.0.4
+        version: 4.1.0
       - name: com.unity.2d.sprite
         version: 1.0.0
       - name: com.unity.modules.uielements
@@ -354,7 +354,7 @@ m_PackageAssets:
       - name: com.unity.modules.uielementsnative
         version: 1.0.0
       - name: com.unity.2d.animation
-        version: 5.0.10
+        version: 5.1.0
       - name: com.unity.mathematics
         version: 1.1.0
       - name: com.unity.modules.animation
@@ -375,13 +375,13 @@ m_PackageAssets:
       entitlements:
         isAllowed: 1
       isAssetStorePackage: 0
-      datePublishedTicks: 637750142410000000
+      datePublishedTicks: 637781310920000000
       documentationUrl: 
       hasRepository: 1
       repository:
         type: git
         url: https://github.cds.internal.unity3d.com/unity/2d.git
-        revision: 341b7316671d7e6703a7627f67c5fab262c4f1ac
+        revision: e1ff2896b994f5eb1cc6bec519c643b3e2cd32ec
         path: 
     - packageId: com.unity.2d.sprite@1.0.0
       testable: 0
@@ -434,12 +434,12 @@ m_PackageAssets:
         url: 
         revision: 
         path: 
-    - packageId: com.unity.2d.spriteshape@5.1.7
+    - packageId: com.unity.2d.spriteshape@5.2.0
       testable: 0
       isDirectDependency: 1
-      version: 5.1.7
+      version: 5.2.0
       source: 1
-      resolvedPath: C:\Users\fight\Idle Game\Library\PackageCache\com.unity.2d.spriteshape@5.1.7
+      resolvedPath: C:\Users\fight\Idle Game\Library\PackageCache\com.unity.2d.spriteshape@5.2.0
       assetPath: Packages/com.unity.2d.spriteshape
       name: com.unity.2d.spriteshape
       displayName: 2D SpriteShape
@@ -523,15 +523,15 @@ m_PackageAssets:
         - 7.0.3
         - 8.0.0-pre.4
         - 8.0.0-pre.5
+        - 8.0.0
         compatible:
-        - 5.1.7
         - 5.2.0
-        verified: 5.1.7
+        verified: 5.2.0
       dependencies:
       - name: com.unity.mathematics
         version: 1.1.0
       - name: com.unity.2d.common
-        version: 4.0.4
+        version: 4.1.0
       - name: com.unity.2d.path
         version: 4.0.2
       - name: com.unity.modules.physics2d
@@ -540,7 +540,7 @@ m_PackageAssets:
       - name: com.unity.mathematics
         version: 1.1.0
       - name: com.unity.2d.common
-        version: 4.0.4
+        version: 4.1.0
       - name: com.unity.2d.sprite
         version: 1.0.0
       - name: com.unity.modules.uielements
@@ -576,13 +576,13 @@ m_PackageAssets:
       entitlements:
         isAllowed: 1
       isAssetStorePackage: 0
-      datePublishedTicks: 637750142490000000
+      datePublishedTicks: 637781310960000000
       documentationUrl: 
       hasRepository: 1
       repository:
         type: git
         url: https://github.cds.internal.unity3d.com/unity/2d.git
-        revision: 341b7316671d7e6703a7627f67c5fab262c4f1ac
+        revision: e1ff2896b994f5eb1cc6bec519c643b3e2cd32ec
         path: 
     - packageId: com.unity.2d.tilemap@1.0.0
       testable: 0
@@ -3474,12 +3474,12 @@ m_PackageAssets:
         url: git@github.com:Unity-Technologies/Unity.Mathematics.git
         revision: 0a3dfafaf606098ea681de4c4be60f3aac63b773
         path: 
-    - packageId: com.unity.2d.common@4.0.4
+    - packageId: com.unity.2d.common@4.1.0
       testable: 0
       isDirectDependency: 0
-      version: 4.0.4
+      version: 4.1.0
       source: 1
-      resolvedPath: C:\Users\fight\Idle Game\Library\PackageCache\com.unity.2d.common@4.0.4
+      resolvedPath: C:\Users\fight\Idle Game\Library\PackageCache\com.unity.2d.common@4.1.0
       assetPath: Packages/com.unity.2d.common
       name: com.unity.2d.common
       displayName: 2D Common
@@ -3526,9 +3526,8 @@ m_PackageAssets:
         - 7.0.0-pre.3
         - 7.0.0-pre.4
         compatible:
-        - 4.0.4
         - 4.1.0
-        verified: 4.0.4
+        verified: 4.1.0
       dependencies:
       - name: com.unity.2d.sprite
         version: 1.0.0
@@ -3561,13 +3560,13 @@ m_PackageAssets:
       entitlements:
         isAllowed: 1
       isAssetStorePackage: 0
-      datePublishedTicks: 637750142160000000
+      datePublishedTicks: 637781310790000000
       documentationUrl: 
       hasRepository: 1
       repository:
         type: git
         url: https://github.cds.internal.unity3d.com/unity/2d.git
-        revision: 341b7316671d7e6703a7627f67c5fab262c4f1ac
+        revision: e1ff2896b994f5eb1cc6bec519c643b3e2cd32ec
         path: 
     - packageId: com.unity.2d.path@4.0.2
       testable: 0
@@ -3641,4 +3640,4 @@ m_PackageAssets:
   m_LocalPackages:
     m_LocalFileStatus: []
 m_ProjectPath: C:/Users/fight/Idle Game/Packages
-m_EditorVersion: 2020.3.27f1 (e759542391ea)
+m_EditorVersion: 2020.3.28f1 (f5400f52e03f)

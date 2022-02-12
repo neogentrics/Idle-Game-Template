@@ -9,16 +9,19 @@ public class Data
 {
     public BigDouble flasks;
 
-    public List<int> clickUpgradesLevel;
-    public List<int> productionUpgradesLevel;
-
+    public List<BigDouble> clickUpgradesLevel;
+    public List<BigDouble> productionUpgradesLevel;
+    public List<BigDouble> productionUpgradeGenerated;
+    public List<BigDouble> generatorUpgradesLevel;
 
     public Data()
     {
         flasks = 0;
 
-        clickUpgradesLevel = new int[7].ToList();
-        productionUpgradesLevel = new int[7].ToList();
+        clickUpgradesLevel = new BigDouble[7].ToList();
+        productionUpgradesLevel = new BigDouble[7].ToList();
+        productionUpgradeGenerated = new BigDouble[7].ToList();
+        generatorUpgradesLevel = new BigDouble[7].ToList();
     }
 
 }

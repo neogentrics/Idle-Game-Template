@@ -21,7 +21,7 @@ public class Controller : MonoBehaviour
         BigDouble total = 1;
         for (int i = 0; i < data.clickUpgradesLevel.Count; i++)
         {
-            total += UpgradesManager.Instance.clickUpgradesBasePower[i] * data.clickUpgradesLevel[i];
+            total += UpgradesManager.Instance.UpgradeHandlers[0].UpgradesBasePower[i] * data.clickUpgradesLevel[i];
   
         }
         return total;
@@ -32,10 +32,15 @@ public class Controller : MonoBehaviour
         BigDouble total = 0;
         for (int i = 0; i < data.productionUpgradesLevel.Count; i++)
         {
-            total += UpgradesManager.Instance.productionUpgradesBasePower[i] * data.productionUpgradesLevel[i];
-
+            total += UpgradesManager.Instance.UpgradeHandlers[1].UpgradesBasePower[i] 
+                * data.productionUpgradesLevel[i] + data.productionUpgradeGenerated[i];
         }
         return total;
+    }
+
+    public BigDouble UpgradesPerSecond(int index)
+    {
+        return UpgradesManager.Instance.UpgradeHandlers[2].UpgradesBasePower[index] * data.generatorUpgradesLevel[index];
     }
 
     public void Start()
@@ -53,6 +58,9 @@ public class Controller : MonoBehaviour
         flaskClickPowerText.text = "+" + ClickPower() + " Flasks";
 
         data.flasks += FlasksPerSecond() * Time.deltaTime;
+
+        for (var i = 0; i < data.productionUpgradesLevel.Count; i++)
+            data.productionUpgradeGenerated[i] += UpgradesPerSecond(i) * Time.deltaTime;
     }
 
 

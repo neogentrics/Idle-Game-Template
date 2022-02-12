@@ -7,43 +7,30 @@ using UnityEngine.UI;
 public class UpgradesManager : MonoBehaviour
 {
     public static UpgradesManager Instance;
-
     private void Awake() => Instance = this;
 
-    public List<Upgrades> clickUpgrades;
-    public Upgrades clickUpgradesPrefab;
-
-    public List<Upgrades> productionUpgrades;
-    public Upgrades productionUpgradesPrefab;
-
-    public ScrollRect clickUpgradesScroll;
-    public Transform clickUpgradesPanel;
-
-    public ScrollRect productionUpgradesScroll;
-    public Transform productionUpgradesPanel;
-
-    public string[] clickUpgradesName;
-    public string[] productionUpgradesName;
-    
-    public BigDouble[] clickUpgradesBaseCost;
-    public BigDouble[] clickUpgradesCostMulti;
-    public BigDouble[] clickUpgradesBasePower;
-
-    public BigDouble[] productionUpgradesBaseCost;
-    public BigDouble[] productionUpgradesCostMulti;
-    public BigDouble[] productionUpgradesBasePower;
-
+    public UpgradeHandler[] UpgradeHandlers;
 
     public void StartUpgradeManager()
     {
-        Methods.UpgradeCheck(Controller.Instance.data.clickUpgradesLevel, length: 4);
+        Methods.UpgradeCheck(Controller.Instance.data.clickUpgradesLevel, length: 7);
+        Methods.UpgradeCheck(Controller.Instance.data.productionUpgradesLevel, length: 7);
+        Methods.UpgradeCheck(Controller.Instance.data.generatorUpgradesLevel, length: 7);
+        Methods.UpgradeCheck(Controller.Instance.data.productionUpgradeGenerated, length: 7);
 
-        clickUpgradesName = new[] 
-        { 
-            "Click Power +1", "Click Power +5", "Click Power +10", "Click Power +25", "Click Power +50", "Click Power +100", "Click Power +1000" 
+        
+        UpgradeHandlers[0].UpgradeNames = new[]
+        {
+            "Click Power +1",
+            "Click Power +5",
+            "Click Power +10",
+            "Click Power +25",
+            "Click Power +50",
+            "Click Power +100",
+            "Click Power +1000"
         };
 
-        productionUpgradesName = new[]
+        UpgradeHandlers[1].UpgradeNames = new[]
         {
             "+2 Flask/s",
             "+5 Flask/s",
@@ -54,35 +41,75 @@ public class UpgradesManager : MonoBehaviour
             "+800 Flask/s"
         };
 
-        clickUpgradesBaseCost = new BigDouble[] {10, 50, 100, 1000, 2000, 2500, 3000};
-        clickUpgradesCostMulti = new BigDouble[] {1.25, 1.35, 1.55, 2, 2.5, 3, 3.5};
-        clickUpgradesBasePower = new BigDouble[] {1, 5, 10, 25, 50, 100, 1000};
-
-        productionUpgradesBaseCost = new BigDouble[] {25, 100, 1000, 2000, 4000, 8000, 10000};
-        productionUpgradesCostMulti = new BigDouble[] {1.5, 1.75, 2, 2.5, 2.75, 3, 3.5};
-        productionUpgradesBasePower = new BigDouble[] {2, 5, 10, 100, 200, 400, 800};
-
-        for (int i = 0; i < Controller.Instance.data.clickUpgradesLevel.Count; i++)
+        UpgradeHandlers[2].UpgradeNames = new[]
         {
-            Upgrades upgrade = Instantiate(clickUpgradesPrefab, clickUpgradesPanel);
-            upgrade.UpgradeID = i;
-            clickUpgrades.Add(upgrade);
-        }
+            $"Produces +0.1 \" {UpgradeHandlers[1].UpgradeNames[0]}\" Upgrades/s",
+            $"Produces +0.05 \" {UpgradeHandlers[1].UpgradeNames[1]}\" Upgrades/s",
+            $"Produces +0.02 \" {UpgradeHandlers[1].UpgradeNames[2]}\" Upgrades/s",
+            $"Produces +0.01 \" {UpgradeHandlers[1].UpgradeNames[3]}\" Upgrades/s",
+            $"Produces +0.005 \" {UpgradeHandlers[1].UpgradeNames[4]}\" Upgrades/s",
+            $"Produces +0.002 \" {UpgradeHandlers[1].UpgradeNames[5]}\" Upgrades/s",
+            $"Produces +0.001 \" {UpgradeHandlers[1].UpgradeNames[6]}\" Upgrades/s"
+        };
 
-        for (int i = 0; i < Controller.Instance.data.productionUpgradesLevel.Count; i++)
+        // Click Upgrades
+        UpgradeHandlers[0].UpgradeBaseCost = new BigDouble[] { 10, 50, 100, 1000, 1500, 2000, 2500 };
+        UpgradeHandlers[0].UpgradeCostMulti = new BigDouble[] { 1.25, 1.35, 1.55, 2, 2.5, 3, 3.5 };
+        UpgradeHandlers[0].UpgradesBasePower = new BigDouble[] { 1, 5, 10, 25, 50, 100, 1000 };
+        UpgradeHandlers[0].UpgradesUnlock = new BigDouble[] { 0, 25, 50, 500, 750, 1000, 1250 };
+
+        // Production Upgrades
+        UpgradeHandlers[1].UpgradeBaseCost = new BigDouble[] { 25, 100, 1000, 2000, 4000, 8000, 10000 };
+        UpgradeHandlers[1].UpgradeCostMulti = new BigDouble[] { 1.5, 1.75, 2, 2.5, 2.75, 3, 3.5 };
+        UpgradeHandlers[1].UpgradesBasePower = new BigDouble[] { 2, 5, 10, 100, 200, 400, 800 };
+        UpgradeHandlers[1].UpgradesUnlock = new BigDouble[] { 0, 50, 500, 1000, 2000, 4000, 5000 };
+
+        // Generator Upgrades
+        UpgradeHandlers[2].UpgradeBaseCost = new BigDouble[] { 5000, 1e4, 1e5, 1e6, 1e7, 1e8, 1e10 };
+        UpgradeHandlers[2].UpgradeCostMulti = new BigDouble[] { 1.25, 1.5, 2, 2.5, 2.75, 3, 3.5 };
+        UpgradeHandlers[2].UpgradesBasePower = new BigDouble[] { 0.1, 0.05, 0.02, 0.01, 0.005, 0.002, 0.001 };
+        UpgradeHandlers[2].UpgradesUnlock = new BigDouble[] { 2500, 5e3, 5e4, 5e5, 5e6, 5e7, 5e9 };
+
+        CreateUpgrades(Controller.Instance.data.clickUpgradesLevel, index: 0);
+        CreateUpgrades(Controller.Instance.data.productionUpgradesLevel, index: 1);
+        CreateUpgrades(Controller.Instance.data.generatorUpgradesLevel, index: 2);
+
+        void CreateUpgrades<T>(List<T> level, int index)
         {
-            Upgrades upgrade = Instantiate(productionUpgradesPrefab, productionUpgradesPanel);
-            upgrade.UpgradeID = i;
-            productionUpgrades.Add(upgrade);
+            for (int i = 0; i < level.Count; i++)
+            {
+                Upgrades upgrade = Instantiate(UpgradeHandlers[index].UpgradesPrefab, UpgradeHandlers[index].UpgradesPanel);
+                upgrade.UpgradeID = i;
+                upgrade.gameObject.SetActive(false);
+                UpgradeHandlers[index].Upgrades.Add(upgrade);
+            }
+
+            UpgradeHandlers[index].UpgradesScroll.normalizedPosition = new Vector2(0, 0);
+
         }
-
-        clickUpgradesScroll.normalizedPosition = new Vector2(0, 0);
-        productionUpgradesScroll.normalizedPosition = new Vector2(0, 0);
-
-
         UpdateUpgradeUI("click");
         UpdateUpgradeUI("production");
+        UpdateUpgradeUI("generator");
 
+    }
+
+    public void Update()
+    {
+        UpgradeUnlockSystem(Controller.Instance.data.flasks, UpgradeHandlers[0].UpgradesUnlock, index: 0);
+        UpgradeUnlockSystem(Controller.Instance.data.flasks, UpgradeHandlers[1].UpgradesUnlock, index: 1);
+        UpgradeUnlockSystem(Controller.Instance.data.flasks, UpgradeHandlers[2].UpgradesUnlock, index: 2);
+
+        void UpgradeUnlockSystem(BigDouble currency, BigDouble[] unlock, int index)
+        {
+            for (var i = 0; i < UpgradeHandlers[index].Upgrades.Count; i++)
+                if (!UpgradeHandlers[index].Upgrades[i].gameObject.activeSelf)
+                    UpgradeHandlers[index].Upgrades[i].gameObject.SetActive(currency >= unlock[i]);
+        }
+
+        if (UpgradeHandlers[1].UpgradesScroll.gameObject.activeSelf)
+        {
+            UpdateUpgradeUI("production");
+        }        
     }
 
 
@@ -93,70 +120,109 @@ public class UpgradesManager : MonoBehaviour
         switch (type)
         {
             case "click":
-                if (UpgradeID == -1)
-                    for (int i = 0; i < clickUpgrades.Count; i++) UpgradeUI(clickUpgrades, data.clickUpgradesLevel, clickUpgradesName, i);
-                else UpgradeUI(clickUpgrades, data.clickUpgradesLevel, clickUpgradesName,  UpgradeID);
+                UpgradeAllUI(UpgradeHandlers[0].Upgrades, data.clickUpgradesLevel, UpgradeHandlers[0].UpgradeNames, 0, UpgradeID, type);
                 break;
             case "production":
-                if (UpgradeID == -1)
-                    for (int i = 0; i < productionUpgrades.Count; i++) UpgradeUI(productionUpgrades, data.productionUpgradesLevel, productionUpgradesName, i);
-                else UpgradeUI(productionUpgrades, data.productionUpgradesLevel, productionUpgradesName, UpgradeID);
+                UpgradeAllUI(UpgradeHandlers[1].Upgrades, data.productionUpgradesLevel, UpgradeHandlers[1].UpgradeNames, 1, UpgradeID, type,
+                    data.productionUpgradeGenerated);
                 break;
-        }
+            case "generator":
+                UpgradeAllUI(UpgradeHandlers[2].Upgrades, data.generatorUpgradesLevel, UpgradeHandlers[2].UpgradeNames, 2, UpgradeID, type);
+                break;
+        }        
+    }
 
-        void UpgradeUI(List<Upgrades> upgrades,List<int> upgradeLevels , string[] upgradeNames, int ID)
+    private void UpgradeAllUI(List<Upgrades> upgrades, List<BigDouble> upgradeLevels,string[] upgradeNames, int index, int UpgradeID,
+        string type, List<BigDouble> upgradesGenerated = null)
+    {
+        if (UpgradeID == -1)
+            for (int i = 0; i < UpgradeHandlers[index].Upgrades.Count; i++) UpdateUI(i);
+        else UpdateUI(UpgradeID);
+
+        void UpdateUI(int ID)
         {
-            upgrades[ID].LevelText.text = upgradeLevels[ID].ToString();
+            BigDouble generated = upgradesGenerated == null ? 0 : upgradesGenerated[ID];
+            upgrades[ID].LevelText.text = upgradeLevels[ID] + generated.ToString("F2");
             upgrades[ID].CostText.text = $"Cost: {UpgradeCost(type, ID):F2} Flasks";
             upgrades[ID].NameText.text = upgradeNames[ID];
         }
-
-
     }
 
     public BigDouble UpgradeCost(string type, int UpgradeID)
     {
         var data = Controller.Instance.data;
-        
+
         switch (type)
         {
             case "click":
-                return clickUpgradesBaseCost[UpgradeID]
-            * BigDouble.Pow(clickUpgradesCostMulti[UpgradeID], power: (BigDouble)data.clickUpgradesLevel[UpgradeID]);
+                return UpgradeCost_BigDouble(0, data.clickUpgradesLevel, UpgradeID);
             case "production":
-                return productionUpgradesBaseCost[UpgradeID]
-            * BigDouble.Pow(productionUpgradesCostMulti[UpgradeID], power: (BigDouble)data.productionUpgradesLevel[UpgradeID]);
-
+                return UpgradeCost_BigDouble(1, data.productionUpgradesLevel, UpgradeID);
+            case "generator":
+                return UpgradeCost_BigDouble(2, data.generatorUpgradesLevel, UpgradeID);
         }
-
         return 0;
+    }
 
-   }
+
+    private BigDouble UpgradeCost_BigDouble(int index, List<BigDouble> levels, int UpgradeID)
+    {
+        return UpgradeHandlers[index].UpgradeBaseCost[UpgradeID]
+            * BigDouble.Pow(UpgradeHandlers[index].UpgradeCostMulti[UpgradeID],
+                power: levels[UpgradeID]);
+    }
+
+    /*
+    private BigDouble UpgradeCost_Int(int index, List<int> levels, int UpgradeID)
+    {
+        return UpgradeHandlers[index].UpgradeBaseCost[UpgradeID]
+            * BigDouble.Pow(UpgradeHandlers[index].UpgradeCostMulti[UpgradeID],
+                power: (BigDouble)levels[UpgradeID]);
+    }
+    */
+
     public void BuyUpgrade(string type, int UpgradeID)
     {
-        var data = Controller.Instance.data;       
-        
+        var data = Controller.Instance.data;
+
         switch (type)
         {
-            case "click": Buy(data.clickUpgradesLevel);
+            case "click":
+                Buy(data.clickUpgradesLevel, type, UpgradeID);
                 break;
             case "production":
-                Buy(data.productionUpgradesLevel);
+                Buy(data.productionUpgradesLevel, type, UpgradeID);
                 break;
-        }
-
-        void Buy(List<int> upgradeLevels)
-        {
-            if (data.flasks >= UpgradeCost(type, UpgradeID))
-            {
-                data.flasks -= UpgradeCost(type, UpgradeID);
-                upgradeLevels[UpgradeID] += 1;
-            }
-
-            UpdateUpgradeUI(type, UpgradeID);
+            case "generator":
+                Buy(data.generatorUpgradesLevel, type, UpgradeID);
+                break;
         }
 
     }
-    
 
+
+
+    private void Buy(List<int> upgradeLevels, string type, int UpgradeID)
+    {
+        var data = Controller.Instance.data;
+        if (data.flasks >= UpgradeCost(type, UpgradeID))
+        {
+            data.flasks -= UpgradeCost(type, UpgradeID);
+            upgradeLevels[UpgradeID] += 1;
+        }
+
+        UpdateUpgradeUI(type, UpgradeID);
+    }
+
+    private void Buy(List<BigDouble> upgradeLevels, string type, int UpgradeID)
+    {
+        var data = Controller.Instance.data;
+        if (data.flasks >= UpgradeCost(type, UpgradeID))
+        {
+            data.flasks -= UpgradeCost(type, UpgradeID);
+            upgradeLevels[UpgradeID] += 1;
+        }
+
+        UpdateUpgradeUI(type, UpgradeID);
+    }
 }
