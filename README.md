@@ -54,4 +54,32 @@ Is this issue due to great a difference in software compatibility or is there a 
 
 **Update 5**
 
-_Coming Soon..._
+I have the first working build Avaiable to test. 
+
+https://github.com/neogentrics/Idle-Game-Template/releases/tag/v1.1
+
+I have updated the files to add new componants but the Save/Load system failed initialization. So I had toremove it to fix the error for now. 
+The current working build includes:
+
+1. Working Click Button
+2. Working Click Ugrades
+3. Working Production Upgrades
+
+-> Added 
+
+Generator Upgrades
+Fixed Navigation
+
+-> bug
+
+PlayerData Setup
+Save/Load System
+
+
+Will continue to work to resolve this issue. 
+
+***********************************************************************************************************************************************************************************
+
+**Update 6**
+
+Coming Soon...
