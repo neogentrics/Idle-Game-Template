@@ -3525,6 +3525,7 @@ m_PackageAssets:
         - 6.0.2
         - 7.0.0-pre.3
         - 7.0.0-pre.4
+        - 7.0.0
         compatible:
         - 4.1.0
         verified: 4.1.0

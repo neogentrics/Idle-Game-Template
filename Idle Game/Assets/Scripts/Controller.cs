@@ -1,4 +1,3 @@
-using System;
 using BreakInfinity;
 using UnityEngine;
 using TMPro;
@@ -21,8 +20,7 @@ public class Controller : MonoBehaviour
         BigDouble total = 1;
         for (int i = 0; i < data.clickUpgradesLevel.Count; i++)
         {
-            total += UpgradesManager.Instance.UpgradeHandlers[0].UpgradesBasePower[i] * data.clickUpgradesLevel[i];
-  
+            total += UpgradesManager.Instance.UpgradeHandlers[0].UpgradesBasePower[i] * data.clickUpgradesLevel[i];  
         }
         return total;
     }
@@ -44,11 +42,26 @@ public class Controller : MonoBehaviour
     }
 
     private const string dataFileName = "PlayerData";
+
+    /*
     private void Start()
     {
+        var fire = UpgradesManager.Instance;
+
         data = SaveSystem.SaveExists(dataFileName) 
             ? SaveSystem.LoadData<Data>(dataFileName)
             : new Data();
+        fire.StartUpgradeManager();
+    }
+    */
+
+    private void Start()
+    {
+        data = /*SaveSystem.SaveExists(dataFileName)
+            ? SaveSystem.LoadData<Data>(dataFileName)
+            : */new Data();
+        var accessTestA = Controller.Instance;
+        var accessTestB = Controller.Instance.data;
         UpgradesManager.Instance.StartUpgradeManager();
     }
 
@@ -56,7 +69,7 @@ public class Controller : MonoBehaviour
 
     public void Update()
     {
-        flasksTexts.text = $"{data.flasks:F2} Flasks";
+        flasksTexts.text = $"{data.flasks:F1} Flasks";
         flasksPerSecond.text = $"{FlasksPerSecond():F2}/s";
         flaskClickPowerText.text = "+" + ClickPower() + " Flasks";
 
@@ -66,7 +79,7 @@ public class Controller : MonoBehaviour
             data.productionUpgradeGenerated[i] += UpgradesPerSecond(i) * Time.deltaTime;
 
         SaveTime += Time.deltaTime * (1 / Time.timeScale);
-        if (SaveTime >= 15)
+        if (SaveTime >= 5)
         {
             SaveSystem.SaveData(data, dataFileName);
             SaveTime = 0;

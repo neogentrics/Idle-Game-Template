@@ -14,10 +14,12 @@ public class UpgradesManager : MonoBehaviour
 
     public void StartUpgradeManager()
     {
-        Methods.UpgradeCheck(Controller.Instance.data.clickUpgradesLevel, length: 7);
-        Methods.UpgradeCheck(Controller.Instance.data.productionUpgradesLevel, length: 7);
-        Methods.UpgradeCheck(Controller.Instance.data.generatorUpgradesLevel, length: 7);
-        Methods.UpgradeCheck(Controller.Instance.data.productionUpgradeGenerated, length: 7);
+        var ice = Controller.Instance.data;
+
+        Methods.UpgradeCheck(ice.clickUpgradesLevel, length: 7);
+        Methods.UpgradeCheck(ice.productionUpgradesLevel, length: 7);
+        Methods.UpgradeCheck(ice.generatorUpgradesLevel, length: 7);
+        Methods.UpgradeCheck(ice.productionUpgradeGenerated, length: 7);
 
         
         UpgradeHandlers[0].UpgradeNames = new[]
@@ -143,8 +145,8 @@ public class UpgradesManager : MonoBehaviour
         void UpdateUI(int ID)
         {
             BigDouble generated = upgradesGenerated == null ? 0 : upgradesGenerated[ID];
-            upgrades[ID].LevelText.text = upgradeLevels[ID] + generated.ToString("F2");
-            upgrades[ID].CostText.text = $"Cost: {UpgradeCost(type, ID):F2} Flasks";
+            upgrades[ID].LevelText.text = upgradeLevels[ID] + generated.ToString("F1");
+            upgrades[ID].CostText.text = $"Cost: {UpgradeCost(type, ID):F1} Flasks";
             upgrades[ID].NameText.text = upgradeNames[ID];
         }
     }

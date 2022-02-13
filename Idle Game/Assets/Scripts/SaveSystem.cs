@@ -3,6 +3,7 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 
+
 public class SaveSystem : MonoBehaviour
 {
     private const string FileType = ".txt";
