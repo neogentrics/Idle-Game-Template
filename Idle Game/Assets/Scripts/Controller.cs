@@ -55,11 +55,11 @@ public class Controller : MonoBehaviour
     }
     */
 
-    private void Start()
+    public void Start()
     {
-        data = /*SaveSystem.SaveExists(dataFileName)
+        data = SaveSystem.SaveExists(dataFileName)
             ? SaveSystem.LoadData<Data>(dataFileName)
-            : */new Data();
+            : new Data();
         var accessTestA = Controller.Instance;
         var accessTestB = Controller.Instance.data;
         UpgradesManager.Instance.StartUpgradeManager();
@@ -81,9 +81,15 @@ public class Controller : MonoBehaviour
         SaveTime += Time.deltaTime * (1 / Time.timeScale);
         if (SaveTime >= 5)
         {
-            SaveSystem.SaveData(data, dataFileName);
+            Save();
             SaveTime = 0;
         }    
+    }
+
+    public void Save()
+    {
+        SaveSystem.SaveData(data, dataFileName);
+
     }
 
 
