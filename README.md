@@ -111,3 +111,4 @@ Upgrade Scrollbar isn't working properly.
 
 **Update 7**
 
+Coming Soon...
