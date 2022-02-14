@@ -82,4 +82,30 @@ Will continue to work to resolve this issue.
 
 **Update 6**
 
-Coming Soon...
+Build version 1.2
+
+Finalizes the issues that were about the Save/Load System for the PlayerData. With a new Save Data system to reload if an error occurred as well to save outside the current autosave. Along with this update, The user can now access a type of Settings Menu to execute the saves. 
+
+-> Added
+
+Save/Load System
+External Save/Load Method
+Settings Menu/Button
+
+-Patched
+
+Save/Load System
+
+-> Updated
+
+Button Text and Colors
+New Colorful Background Images
+
+-> Bug
+
+Upgrade Scrollbar isn't working properly.
+
+***********************************************************************************************************************************************************************************
+
+**Update 7**
+
