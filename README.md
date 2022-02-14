@@ -84,6 +84,8 @@ Will continue to work to resolve this issue.
 
 Build version 1.2
 
+https://github.com/neogentrics/Idle-Game-Template/releases/tag/v1.2
+
 Finalizes the issues that were about the Save/Load System for the PlayerData. With a new Save Data system to reload if an error occurred as well to save outside the current autosave. Along with this update, The user can now access a type of Settings Menu to execute the saves. 
 
 -> Added
