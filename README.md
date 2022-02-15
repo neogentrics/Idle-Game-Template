@@ -147,4 +147,33 @@ Scroll Feature Still Unavailable.
 
 **Update 8**
 
-Coming Soon...
+**Full Changelog**: https://github.com/neogentrics/Idle-Game-Template/compare/v1.3...v2.0
+
+Version 2.0 is now available
+
+https://github.com/neogentrics/Idle-Game-Template/releases/tag/v2.0
+
+-> Added 
+
+Achievements Page
+Skill Tree Page
+Achievements & Skill Tree Buttons
+Skill Upgrade Progression Bars
+
+-> Updated 
+
+Settings Page 
+Home Page 
+The interface of Click Upgrades
+
+-> Bug Fixes
+
+ScrollBars
+Count Format Button
+Switch between Notion Types.
+
+***********************************************************************************************************************************************************************************
+
+**Update 9**
+
+Coming Soon ...
