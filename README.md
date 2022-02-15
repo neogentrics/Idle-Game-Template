@@ -8,6 +8,8 @@ Even though I am already familiar with C#.
 If you can help me fix any of the errors in the code that would be appreciated. 
 
 
+_**#Changelog Update**_
+
 ***********************************************************************************************************************************************************************************
 
 **Update 1**
@@ -110,5 +112,39 @@ Upgrade Scrollbar isn't working properly.
 ***********************************************************************************************************************************************************************************
 
 **Update 7**
+
+**Full Changelog**: https://github.com/neogentrics/Idle-Game-Template/compare/v1.2...v1.3
+
+Version 1.3 is now available.
+
+https://github.com/neogentrics/Idle-Game-Template/releases/tag/v1.3
+
+The interface has been updated to match the current theme. All buttons have been reworked and applied new factor forms to all actions.
+Additionally, there are still some bugs to work out but the updated UI includes a better button interaction and color mapping along with an upgrade progression bar.
+
+-> Added
+
+Upgrade Progression Bars
+Main & Save System Menu's
+Updated Button Designs
+New Theme
+Flask Count Formats [Standard, Scientific, Engineering, Logarithmic]
+
+
+-> Fixes
+
+Button Upgrade Level Indicator
+Switch Screen Flickering
+Generation of Objects and Interaction Improvisation
+
+-> Current Bugs
+
+Count Format Button Not Working
+Switch between Notion Types.
+Scroll Feature Still Unavailable. 
+
+***********************************************************************************************************************************************************************************
+
+**Update 8**
 
 Coming Soon...
