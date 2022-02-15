@@ -10,6 +10,8 @@ public class Upgrades : MonoBehaviour
     public TMP_Text NameText;
     public TMP_Text CostText;
 
+    public Image Fill;
+
     public void BuyClickUpgrade() => UpgradesManager.Instance.BuyUpgrade("click", UpgradeID);
     public void BuyProductionUpgrade() => UpgradesManager.Instance.BuyUpgrade("production", UpgradeID);
     public void BuyGeneratorUpgrade() => UpgradesManager.Instance.BuyUpgrade("generator", UpgradeID);

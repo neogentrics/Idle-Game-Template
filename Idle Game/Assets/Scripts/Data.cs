@@ -14,6 +14,8 @@ public class Data
     public List<BigDouble> productionUpgradeGenerated;
     public List<BigDouble> generatorUpgradesLevel;
 
+    public int Notation;
+
     public Data()
     {
         flasks = 0;
@@ -22,6 +24,8 @@ public class Data
         productionUpgradesLevel = new BigDouble[7].ToList();
         productionUpgradeGenerated = new BigDouble[7].ToList();
         generatorUpgradesLevel = new BigDouble[7].ToList();
+
+        Notation = 0;
     }
 
 }

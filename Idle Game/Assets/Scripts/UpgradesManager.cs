@@ -46,13 +46,13 @@ public class UpgradesManager : MonoBehaviour
 
         UpgradeHandlers[2].UpgradeNames = new[]
         {
-            $"Produces +0.1 \" {UpgradeHandlers[1].UpgradeNames[0]}\" Upgrades/s",
-            $"Produces +0.05 \" {UpgradeHandlers[1].UpgradeNames[1]}\" Upgrades/s",
-            $"Produces +0.02 \" {UpgradeHandlers[1].UpgradeNames[2]}\" Upgrades/s",
-            $"Produces +0.01 \" {UpgradeHandlers[1].UpgradeNames[3]}\" Upgrades/s",
-            $"Produces +0.005 \" {UpgradeHandlers[1].UpgradeNames[4]}\" Upgrades/s",
-            $"Produces +0.002 \" {UpgradeHandlers[1].UpgradeNames[5]}\" Upgrades/s",
-            $"Produces +0.001 \" {UpgradeHandlers[1].UpgradeNames[6]}\" Upgrades/s"
+            $"Produces +1 \" {UpgradeHandlers[1].UpgradeNames[0]}\" Upgrades/s",
+            $"Produces +2 \" {UpgradeHandlers[1].UpgradeNames[1]}\" Upgrades/s",
+            $"Produces +4 \" {UpgradeHandlers[1].UpgradeNames[2]}\" Upgrades/s",
+            $"Produces +8 \" {UpgradeHandlers[1].UpgradeNames[3]}\" Upgrades/s",
+            $"Produces +16 \" {UpgradeHandlers[1].UpgradeNames[4]}\" Upgrades/s",
+            $"Produces +256 \" {UpgradeHandlers[1].UpgradeNames[5]}\" Upgrades/s",
+            $"Produces +512 \" {UpgradeHandlers[1].UpgradeNames[6]}\" Upgrades/s"
         };
 
         // Click Upgrades
@@ -70,7 +70,7 @@ public class UpgradesManager : MonoBehaviour
         // Generator Upgrades
         UpgradeHandlers[2].UpgradeBaseCost = new BigDouble[] { 5000, 1e4, 1e5, 1e6, 1e7, 1e8, 1e10 };
         UpgradeHandlers[2].UpgradeCostMulti = new BigDouble[] { 1.25, 1.5, 2, 2.5, 2.75, 3, 3.5 };
-        UpgradeHandlers[2].UpgradesBasePower = new BigDouble[] { 0.1, 0.05, 0.02, 0.01, 0.005, 0.002, 0.001 };
+        UpgradeHandlers[2].UpgradesBasePower = new BigDouble[] { 1, 2, 4, 8, 16, 256, 512};
         UpgradeHandlers[2].UpgradesUnlock = new BigDouble[] { 2500, 5e3, 5e4, 5e5, 5e6, 5e7, 5e9 };
 
         CreateUpgrades(Controller.Instance.data.clickUpgradesLevel, index: 0);
@@ -109,7 +109,22 @@ public class UpgradesManager : MonoBehaviour
                     UpgradeHandlers[index].Upgrades[i].gameObject.SetActive(currency >= unlock[i]);
         }
 
-        if (UpgradeHandlers[1].UpgradesScroll.gameObject.activeSelf)
+        UpgradeFillManager("click", 0);
+        UpgradeFillManager("production", 1);
+        UpgradeFillManager("generator", 2);
+
+        void UpgradeFillManager(string type, int index)
+        {
+            if (!UpgradeHandlers[index].UpgradesScroll.gameObject.activeSelf) return;
+            {
+            for (var i = 0; i < UpgradeHandlers[index].Upgrades.Count; i++)
+                UpgradeHandlers[index].Upgrades[i].Fill.fillAmount = Methods.Fill(Controller.Instance.data.flasks, UpgradeCost(type, i));
+            }
+        }
+
+        
+
+            if (UpgradeHandlers[1].UpgradesScroll.gameObject.activeSelf)
         {
             UpdateUpgradeUI("production");
         }        
@@ -144,10 +159,11 @@ public class UpgradesManager : MonoBehaviour
 
         void UpdateUI(int ID)
         {
-            BigDouble generated = upgradesGenerated == null ? 0 : upgradesGenerated[ID];
-            upgrades[ID].LevelText.text = upgradeLevels[ID] + generated.ToString("F1");
-            upgrades[ID].CostText.text = $"Cost: {UpgradeCost(type, ID):F1} Flasks";
+            //BigDouble generated = upgradesGenerated == null ? 0 : upgradesGenerated[ID];
+            upgrades[ID].LevelText.text = upgradeLevels[ID]/*+ generated*/.ToString("F0");
+            upgrades[ID].CostText.text = $"Cost: {UpgradeCost(type, ID).Notate()} Flasks";
             upgrades[ID].NameText.text = upgradeNames[ID];
+            upgrades[ID].Fill.fillAmount = Methods.Fill(Controller.Instance.data.flasks, UpgradeCost(type, ID));
         }
     }
 

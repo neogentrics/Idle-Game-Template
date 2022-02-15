@@ -4,6 +4,7 @@ ScriptsOnlyBuild:
     - Controller
     - Navigation
     - SaveSystem
+    - Settings
     - UpgradeHandler
     - Upgrades
     - UpgradesManager
@@ -48,6 +49,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.ContentSizeFitter
     - UnityEngine.UI.GraphicRaycaster
+    - UnityEngine.UI.GridLayoutGroup
     - UnityEngine.UI.HorizontalLayoutGroup
     - UnityEngine.UI.Image
     - UnityEngine.UI.LayoutElement
@@ -77,61 +79,65 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 7280}
+      Script: {instanceID: 1480}
     - Class: 114
-      Script: {instanceID: 7310}
+      Script: {instanceID: 1564}
     - Class: 114
-      Script: {instanceID: 7422}
+      Script: {instanceID: 1578}
     - Class: 114
-      Script: {instanceID: 7492}
+      Script: {instanceID: 1692}
     - Class: 114
-      Script: {instanceID: 7600}
+      Script: {instanceID: 1728}
     - Class: 114
-      Script: {instanceID: 7784}
+      Script: {instanceID: 1764}
     - Class: 114
-      Script: {instanceID: 8002}
+      Script: {instanceID: 1874}
     - Class: 114
-      Script: {instanceID: 8434}
+      Script: {instanceID: 2062}
     - Class: 114
-      Script: {instanceID: 8528}
+      Script: {instanceID: 2286}
     - Class: 114
-      Script: {instanceID: 8610}
+      Script: {instanceID: 2726}
     - Class: 114
-      Script: {instanceID: 8658}
+      Script: {instanceID: 2822}
     - Class: 114
-      Script: {instanceID: 8802}
+      Script: {instanceID: 2904}
     - Class: 114
-      Script: {instanceID: 8844}
+      Script: {instanceID: 2954}
     - Class: 114
-      Script: {instanceID: 9094}
+      Script: {instanceID: 3102}
     - Class: 114
-      Script: {instanceID: 9106}
+      Script: {instanceID: 3144}
     - Class: 114
-      Script: {instanceID: 9224}
+      Script: {instanceID: 3394}
     - Class: 114
-      Script: {instanceID: 9448}
+      Script: {instanceID: 3406}
     - Class: 114
-      Script: {instanceID: 9466}
+      Script: {instanceID: 3524}
     - Class: 114
-      Script: {instanceID: 9622}
+      Script: {instanceID: 3752}
     - Class: 114
-      Script: {instanceID: 10198}
+      Script: {instanceID: 3770}
     - Class: 114
-      Script: {instanceID: 10290}
+      Script: {instanceID: 3926}
     - Class: 114
-      Script: {instanceID: 10466}
+      Script: {instanceID: 4508}
     - Class: 114
-      Script: {instanceID: 10490}
+      Script: {instanceID: 4600}
     - Class: 114
-      Script: {instanceID: 10600}
+      Script: {instanceID: 4786}
     - Class: 114
-      Script: {instanceID: 10628}
+      Script: {instanceID: 4810}
     - Class: 114
-      Script: {instanceID: 11028}
+      Script: {instanceID: 4920}
     - Class: 114
-      Script: {instanceID: 11044}
+      Script: {instanceID: 4948}
     - Class: 114
-      Script: {instanceID: 48090}
+      Script: {instanceID: 5352}
+    - Class: 114
+      Script: {instanceID: 5370}
+    - Class: 114
+      Script: {instanceID: 5848}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -151,22 +157,22 @@ ScriptsOnlyBuild:
   scriptHashData:
   - hash:
       serializedVersion: 2
+      Hash: a6e561615949734e9f12f9b61661f43e
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: Image
+  - hash:
+      serializedVersion: 2
       Hash: 5ab533713adae59372fb3e10a585c186
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: AnimationPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: d4a3610ca5a9d7b129d3f203a82f1151
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: Methods
-  - hash:
-      serializedVersion: 2
-      Hash: a6e561615949734e9f12f9b61661f43e
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.UI
-    className: Image
+    className: Settings
   - hash:
       serializedVersion: 2
       Hash: 77aaaaa51f7a8d8ff333a879741e47d2
@@ -215,6 +221,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Selectable
+  - hash:
+      serializedVersion: 2
+      Hash: 13d2c981445f7a3761722ed6c5be799d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: WebGLNativeInputField
   - hash:
       serializedVersion: 2
       Hash: 21a9c6dbf300fc1f6dc15ca7e2c39a37
@@ -331,7 +343,7 @@ ScriptsOnlyBuild:
     className: TextMeshSpawner
   - hash:
       serializedVersion: 2
-      Hash: 6525418c4573f7f6a3cd5e03a6bc95e5
+      Hash: 9944448500e533e48b0f6f8f297d27ee
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Upgrades
@@ -805,7 +817,7 @@ ScriptsOnlyBuild:
     className: TMPro_InstructionOverlay
   - hash:
       serializedVersion: 2
-      Hash: 9b16f2a625e30324f757e72f80487968
+      Hash: 46ebc274f05007a10116e54063073d84
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Controller
@@ -905,13 +917,7 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: TMPro.Examples
     className: TMP_TextEventCheck
-  - hash:
-      serializedVersion: 2
-      Hash: 13d2c981445f7a3761722ed6c5be799d
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: WebGLNativeInputField
   platform: 19
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: J:/Testing/Idol Game Test Build V1.2/Idle Game.exe
+  playerPath: J:/Testing/Idol Game Test Build V1.3/Idle Game.exe

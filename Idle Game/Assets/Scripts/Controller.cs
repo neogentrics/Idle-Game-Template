@@ -43,7 +43,7 @@ public class Controller : MonoBehaviour
 
     private const string dataFileName = "PlayerData";
 
-    /*
+    
     private void Start()
     {
         var fire = UpgradesManager.Instance;
@@ -52,9 +52,10 @@ public class Controller : MonoBehaviour
             ? SaveSystem.LoadData<Data>(dataFileName)
             : new Data();
         fire.StartUpgradeManager();
+        Settings.instance.StartSettings();
     }
-    */
 
+    /*
     public void Start()
     {
         data = SaveSystem.SaveExists(dataFileName)
@@ -63,14 +64,16 @@ public class Controller : MonoBehaviour
         var accessTestA = Controller.Instance;
         var accessTestB = Controller.Instance.data;
         UpgradesManager.Instance.StartUpgradeManager();
+        Settings.instance.StartSettings();
     }
+    */
 
     private float SaveTime;
 
     public void Update()
     {
-        flasksTexts.text = $"{data.flasks:F1} Flasks";
-        flasksPerSecond.text = $"{FlasksPerSecond():F2}/s";
+        flasksTexts.text = $"{data.flasks.Notate()} Flasks";
+        flasksPerSecond.text = $"{FlasksPerSecond().Notate()}/s";
         flaskClickPowerText.text = "+" + ClickPower() + " Flasks";
 
         data.flasks += FlasksPerSecond() * Time.deltaTime;
