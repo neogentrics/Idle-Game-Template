@@ -1,6 +1,7 @@
 using BreakInfinity;
 using UnityEngine;
 using TMPro;
+using System.Collections.Generic;
 
 public class Controller : MonoBehaviour
 {
@@ -41,18 +42,27 @@ public class Controller : MonoBehaviour
         return UpgradesManager.Instance.UpgradeHandlers[2].UpgradesBasePower[index] * data.generatorUpgradesLevel[index];
     }
 
-    private const string dataFileName = "PlayerData";
+    public const string dataFileName = "PlayerData";
 
-    
-    private void Start()
+   
+    public void Start()
     {
         var fire = UpgradesManager.Instance;
-
+                      
         data = SaveSystem.SaveExists(dataFileName) 
             ? SaveSystem.LoadData<Data>(dataFileName)
             : new Data();
         fire.StartUpgradeManager();
         Settings.instance.StartSettings();
+    }
+
+    public void Reset()
+    {
+        PlayerPrefs.DeleteAll();
+        
+        data = SaveSystem.SaveExists(dataFileName)
+            ? SaveSystem.LoadData<Data>(dataFileName)
+            : new Data();
     }
 
     /*
@@ -72,6 +82,7 @@ public class Controller : MonoBehaviour
 
     public void Update()
     {
+        
         flasksTexts.text = $"{data.flasks.Notate()} Flasks";
         flasksPerSecond.text = $"{FlasksPerSecond().Notate()}/s";
         flaskClickPowerText.text = "+" + ClickPower() + " Flasks";
@@ -89,6 +100,7 @@ public class Controller : MonoBehaviour
         }    
     }
 
+    
     public void Save()
     {
         SaveSystem.SaveData(data, dataFileName);

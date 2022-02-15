@@ -16,6 +16,8 @@ public class Data
 
     public int Notation;
 
+    // public BigDouble achlevel;    
+
     public Data()
     {
         flasks = 0;
@@ -28,4 +30,5 @@ public class Data
         Notation = 0;
     }
 
+    
 }

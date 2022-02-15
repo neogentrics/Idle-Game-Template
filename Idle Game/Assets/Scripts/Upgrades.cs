@@ -11,6 +11,9 @@ public class Upgrades : MonoBehaviour
     public TMP_Text CostText;
 
     public Image Fill;
+    public Image FillSmooth;
+
+    public double SmoothValue;
 
     public void BuyClickUpgrade() => UpgradesManager.Instance.BuyUpgrade("click", UpgradeID);
     public void BuyProductionUpgrade() => UpgradesManager.Instance.BuyUpgrade("production", UpgradeID);

@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using BreakInfinity;
-
+using UnityEngine;
 
 public static class Methods
 {
@@ -117,5 +117,13 @@ public static class Methods
         if (fill > 1) return 1;
         if (fill < 0.01) return 0;
         return (float)fill;
+    }
+
+    public static void FillSmooth(ref double smoothValue, float actualValue, float speed = 100)
+    {
+        if (actualValue >= smoothValue)
+        smoothValue += (actualValue - smoothValue) / speed + 0.1 * Time.deltaTime;
+        else if (smoothValue < actualValue)
+        smoothValue -= (smoothValue - actualValue) / speed + 0.1 * Time.deltaTime;
     }
 }

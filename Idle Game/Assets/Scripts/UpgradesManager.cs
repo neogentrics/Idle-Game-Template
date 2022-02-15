@@ -117,8 +117,13 @@ public class UpgradesManager : MonoBehaviour
         {
             if (!UpgradeHandlers[index].UpgradesScroll.gameObject.activeSelf) return;
             {
-            for (var i = 0; i < UpgradeHandlers[index].Upgrades.Count; i++)
-                UpgradeHandlers[index].Upgrades[i].Fill.fillAmount = Methods.Fill(Controller.Instance.data.flasks, UpgradeCost(type, i));
+                for (var i = 0; i < UpgradeHandlers[index].Upgrades.Count; i++)
+                {
+                    UpgradeHandlers[index].Upgrades[i].Fill.fillAmount = Methods.Fill(Controller.Instance.data.flasks, UpgradeCost(type, i));
+
+                    Methods.FillSmooth(ref UpgradeHandlers[index].Upgrades[i].SmoothValue, UpgradeHandlers[index].Upgrades[i].Fill.fillAmount);
+                    UpgradeHandlers[index].Upgrades[i].FillSmooth.fillAmount = (float)UpgradeHandlers[index].Upgrades[i].SmoothValue;
+                }
             }
         }
 

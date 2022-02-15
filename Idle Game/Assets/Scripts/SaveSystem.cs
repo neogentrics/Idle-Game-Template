@@ -26,7 +26,7 @@ public class SaveSystem : MonoBehaviour
 
     public GameObject SaveSystemObject;
     public GameObject SaveSystemObjectWebGL;
-
+        
     private const string FileType = ".txt";
     private const string FileName = "PlayerData";
     private static string SavePath => Application.persistentDataPath + "/Saves/";
@@ -34,6 +34,7 @@ public class SaveSystem : MonoBehaviour
 
     private static int SaveCount;
 
+   
     private void Start()
     {
         #if Unity_WEBGL
@@ -197,4 +198,5 @@ public class SaveSystem : MonoBehaviour
         PasteButtonTextWebGL.text = "Paste Clipboard";
     }
 
+    
 }

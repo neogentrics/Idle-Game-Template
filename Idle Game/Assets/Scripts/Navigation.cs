@@ -16,6 +16,8 @@ public class Navigation : MonoBehaviour
 
     public GameObject HomeScreen;
     public GameObject SettingsScreen;
+    public GameObject AchievementsScreen;
+    public GameObject SkillTreeScreen;
 
     public void SwitchUpgrades(string location)
     {
@@ -55,6 +57,8 @@ public class Navigation : MonoBehaviour
     {
         HomeScreen.SetActive(false);
         SettingsScreen.SetActive(false);
+        AchievementsScreen.SetActive(false);
+        SkillTreeScreen.SetActive(false);
 
         switch (location)
         {
@@ -64,6 +68,12 @@ public class Navigation : MonoBehaviour
             case "Settings":
                 SettingsScreen.SetActive(true);
                 break ;
+            case "Achievements":
+                AchievementsScreen.SetActive(true);
+                break;
+            case "SkillTree":
+                SkillTreeScreen.SetActive(true);
+                break;
         }
     }
 }
