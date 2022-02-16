@@ -3,6 +3,7 @@ ScriptsOnlyBuild:
     Assembly-CSharp.dll:
     - Controller
     - Navigation
+    - ResetGame
     - SaveSystem
     - Settings
     - UpgradeHandler
@@ -81,63 +82,65 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1480}
     - Class: 114
-      Script: {instanceID: 1564}
+      Script: {instanceID: 1566}
     - Class: 114
-      Script: {instanceID: 1578}
+      Script: {instanceID: 1580}
     - Class: 114
-      Script: {instanceID: 1692}
+      Script: {instanceID: 1694}
     - Class: 114
-      Script: {instanceID: 1728}
+      Script: {instanceID: 1730}
     - Class: 114
-      Script: {instanceID: 1764}
+      Script: {instanceID: 1766}
     - Class: 114
-      Script: {instanceID: 1874}
+      Script: {instanceID: 1876}
     - Class: 114
-      Script: {instanceID: 2062}
+      Script: {instanceID: 2064}
     - Class: 114
-      Script: {instanceID: 2286}
+      Script: {instanceID: 2288}
     - Class: 114
-      Script: {instanceID: 2726}
+      Script: {instanceID: 2728}
     - Class: 114
-      Script: {instanceID: 2822}
+      Script: {instanceID: 2824}
     - Class: 114
-      Script: {instanceID: 2904}
+      Script: {instanceID: 2906}
     - Class: 114
-      Script: {instanceID: 2954}
+      Script: {instanceID: 2956}
     - Class: 114
-      Script: {instanceID: 3102}
+      Script: {instanceID: 2966}
     - Class: 114
-      Script: {instanceID: 3144}
+      Script: {instanceID: 3106}
     - Class: 114
-      Script: {instanceID: 3394}
+      Script: {instanceID: 3148}
     - Class: 114
-      Script: {instanceID: 3406}
+      Script: {instanceID: 3398}
     - Class: 114
-      Script: {instanceID: 3524}
+      Script: {instanceID: 3410}
     - Class: 114
-      Script: {instanceID: 3752}
+      Script: {instanceID: 3528}
     - Class: 114
-      Script: {instanceID: 3770}
+      Script: {instanceID: 3756}
     - Class: 114
-      Script: {instanceID: 3926}
+      Script: {instanceID: 3774}
     - Class: 114
-      Script: {instanceID: 4508}
+      Script: {instanceID: 3930}
     - Class: 114
-      Script: {instanceID: 4600}
+      Script: {instanceID: 4512}
     - Class: 114
-      Script: {instanceID: 4786}
+      Script: {instanceID: 4604}
     - Class: 114
-      Script: {instanceID: 4810}
+      Script: {instanceID: 4790}
     - Class: 114
-      Script: {instanceID: 4920}
+      Script: {instanceID: 4814}
     - Class: 114
-      Script: {instanceID: 4948}
+      Script: {instanceID: 4924}
     - Class: 114
-      Script: {instanceID: 5352}
+      Script: {instanceID: 4952}
     - Class: 114
-      Script: {instanceID: 5370}
+      Script: {instanceID: 5356}
     - Class: 114
-      Script: {instanceID: 5848}
+      Script: {instanceID: 5374}
+    - Class: 114
+      Script: {instanceID: 5852}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -167,6 +170,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: AnimationPlayableAsset
+  - hash:
+      serializedVersion: 2
+      Hash: cb714650509830e2257e6fba99e2b724
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Achievement
   - hash:
       serializedVersion: 2
       Hash: d4a3610ca5a9d7b129d3f203a82f1151
@@ -343,7 +352,7 @@ ScriptsOnlyBuild:
     className: TextMeshSpawner
   - hash:
       serializedVersion: 2
-      Hash: 9944448500e533e48b0f6f8f297d27ee
+      Hash: 7bdc796054d1893da29a19e16a338344
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Upgrades
@@ -389,6 +398,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TextMeshProUGUI
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ResetGame
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -679,7 +694,7 @@ ScriptsOnlyBuild:
     className: SignalTrack
   - hash:
       serializedVersion: 2
-      Hash: 9a72d4c119101d681d8bb0626606024c
+      Hash: 8d6f317a133658f60819bf5b5d8a87bd
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Navigation
@@ -920,4 +935,4 @@ ScriptsOnlyBuild:
   platform: 19
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: J:/Testing/Idol Game Test Build V1.3/Idle Game.exe
+  playerPath: J:/Testing/Idol Game Test Build V2.0/Idle Game.exe

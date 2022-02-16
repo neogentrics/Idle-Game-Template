@@ -4553,7 +4553,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &716883788
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5189,10 +5189,10 @@ RectTransform:
   m_Father: {fileID: 1386443486}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 134.13164, y: -54.84605}
-  m_SizeDelta: {x: 268.26328, y: 109.6921}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 109.6921}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &895754348
 MonoBehaviour:
@@ -5575,10 +5575,10 @@ RectTransform:
   m_Father: {fileID: 1386443486}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 670.6582, y: -54.845}
-  m_SizeDelta: {x: 268.26328, y: 109.69}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 109.69}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &939294828
 MonoBehaviour:
@@ -7306,7 +7306,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: -471.26465}
-  m_SizeDelta: {x: -711.32104, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1164549365
 CanvasRenderer:
@@ -7846,7 +7846,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -8898,7 +8898,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1376480887
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9823,9 +9823,6 @@ MonoBehaviour:
     - mantissa: 0
       exponent: 0
     Notation: 0
-    achlevel:
-      mantissa: 0
-      exponent: 0
   flasksTexts: {fileID: 1458751207}
   flasksPerSecond: {fileID: 1770123845}
   flaskClickPowerText: {fileID: 1898467473}
@@ -12699,7 +12696,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1803586160
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12839,10 +12836,10 @@ RectTransform:
   m_Father: {fileID: 1386443486}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 402.3949, y: -54.845}
-  m_SizeDelta: {x: 268.26328, y: 109.69}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 109.69}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1879316301
 MonoBehaviour:
